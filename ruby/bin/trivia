@@ -2,7 +2,7 @@
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
 if '--testmode' == ARGV.first
-  srand 12
+  srand ARGV[1].to_i
 end
 
 require 'ugly_trivia/game'
