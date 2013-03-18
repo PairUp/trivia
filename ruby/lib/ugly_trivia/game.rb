@@ -89,7 +89,7 @@ module UglyTrivia
     end
 
     def current_category
-      Questionnaire.current_category(@places[@current_player])
+      Questionnaire.category_for(@places[@current_player])
     end
 
   public
