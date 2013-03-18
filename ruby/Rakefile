@@ -1,6 +1,7 @@
 task :default => :test
-desc 'Run the proof-based test'
+desc 'Run the unit and proof-based test'
 task :test do
+  sh 'ruby test/lib/questionnaire_spec.rb'
   sh 'test/prove'
 end
 
