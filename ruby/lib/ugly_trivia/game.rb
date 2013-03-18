@@ -1,4 +1,5 @@
-# …
+require 'questionnaire'
+
 module UglyTrivia
   class Game
     def  initialize
@@ -88,13 +89,7 @@ module UglyTrivia
     end
 
     def current_category
-      case @places[@current_player]
-      when 0,4,8; 'Pop'
-      when 1,5,9; 'Science'
-      when 2,6,10; 'Sports'
-      else
-        'Rock'
-      end
+      Questionnaire.current_category(@places[@current_player])
     end
 
   public
