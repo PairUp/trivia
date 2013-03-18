@@ -1,5 +1,5 @@
 class Questionnaire
-  def self.current_category(number)
+  def self.category_for(number)
     case number
     when 0,4,8; 'Pop'
     when 1,5,9; 'Science'
