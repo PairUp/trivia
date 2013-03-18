@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
+if '--testmode' == ARGV.first
+  srand 12
+end
+
 require 'ugly_trivia/game'
 
 not_a_winner = false
