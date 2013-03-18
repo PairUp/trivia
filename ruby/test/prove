@@ -6,4 +6,6 @@ for n in `seq 1 12`; do
     bin/trivia --testmode $n >> $out
 done
 git diff --exit-code $out
-printf "\e[38;5;28mPassed!\e[0m\n"
+printf "\e[38;5;28mPassed! Staged this beautiful diff:\e[0m\n"
+git add .
+git diff --cached
