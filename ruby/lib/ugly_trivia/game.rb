@@ -1,3 +1,4 @@
+# …
 module UglyTrivia
   class Game
     def  initialize
