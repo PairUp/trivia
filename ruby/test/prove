@@ -5,4 +5,5 @@ for n in `seq 1 12`; do
     echo 'Now at proof #' $n >> $out
     bin/trivia --testmode $n >> $out
 done
-git diff $out
+git diff --exit-code $out
+printf "\e[38;5;28mPassed!\e[0m\n"
