@@ -1,10 +1,10 @@
 task :default => :test
 desc 'Run the proof-based test'
 task :test do
-  sh 'test/proof'
+  sh 'test/prove'
 end
 
 desc 'Snapshot the current output as the "good" output'
 task :saveproof do
-  sh 'cp test/{actual,proof}.txt'
+  sh 'git add test/the-proof'
 end

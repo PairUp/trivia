@@ -1,0 +1,8 @@
+#!/bin/sh -e
+out=test/the-proof
+rm $out
+for n in `seq 1 12`; do
+    echo 'Now at proof #' $n >> $out
+    bin/trivia --testmode $n >> $out
+done
+git diff $out
