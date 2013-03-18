@@ -1,7 +1,0 @@
-#!/bin/sh -e
-rm test/actual.txt
-for n in `seq 1 12`; do
-    echo 'Now at proof #' $n >> test/actual.txt
-    bin/trivia --testmode $n >> test/actual.txt
-done
-colordiff -u test/{proof,actual}.txt
