@@ -16,9 +16,10 @@ game.add 'Sue'
 not_a_winner = true
 while not_a_winner
   game.roll(rand(5) + 1)
-  if rand(9) == 7
-    not_a_winner = game.wrong_answer
-  else
-    not_a_winner = game.was_correctly_answered
-  end
+  not_a_winner =
+    if rand(9) == 7
+      game.wrong_answer
+    else
+      game.was_correctly_answered
+    end
 end
