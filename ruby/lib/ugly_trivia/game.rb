@@ -86,24 +86,12 @@ module UglyTrivia
     public
 
     def was_correctly_answered
-      if @in_penalty_box[@current_player]
-        if @is_getting_out_of_penalty_box
-          puts 'Answer was correct!!!!'
-          @purses[@current_player] += 1
-          puts "#{@players[@current_player]} now has #{@purses[@current_player]} Gold Coins."
-
-          winner = did_player_win()
-          @current_player += 1
-          @current_player %= @players.length
-
-          winner
-        else
-          @current_player += 1
-          @current_player %= @players.length
-          true
-        end
+      if @in_penalty_box[@current_player] and not @is_getting_out_of_penalty_box
+        @current_player += 1
+        @current_player %= @players.length
+        true
       else
-        puts "Answer was correct!!!!"
+        puts 'Answer was correct!!!!'
         @purses[@current_player] += 1
         puts "#{@players[@current_player]} now has #{@purses[@current_player]} Gold Coins."
 
