@@ -7,19 +7,18 @@ end
 
 require 'ugly_trivia/game'
 
-not_a_winner = false
-
 game = UglyTrivia::Game.new
 
 game.add 'Chet'
 game.add 'Pat'
 game.add 'Sue'
 
-begin
+not_a_winner = true
+while not_a_winner
   game.roll(rand(5) + 1)
   if rand(9) == 7
     not_a_winner = game.wrong_answer
   else
     not_a_winner = game.was_correctly_answered
   end
-end while not_a_winner
+end
