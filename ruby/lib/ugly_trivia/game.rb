@@ -65,6 +65,14 @@ module UglyTrivia
       end
     end
 
+    def did_fictional_user_answer_correctly?
+      if rand(9) == 7
+        wrong_answer
+      else
+        was_correctly_answered
+      end
+    end
+
     private
 
     def ask_question
