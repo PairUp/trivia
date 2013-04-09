@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'questionnaire'
 
 module UglyTrivia
@@ -69,7 +70,7 @@ module UglyTrivia
       if rand(9) == 7
         wrong_answer
       else
-        was_correctly_answered
+        was_correctly_answered‽
       end
     end
 
@@ -85,7 +86,7 @@ module UglyTrivia
 
     public
 
-    def was_correctly_answered
+    def was_correctly_answered‽
       if @in_penalty_box[@current_player] and not @is_getting_out_of_penalty_box
         next_player!
         true
