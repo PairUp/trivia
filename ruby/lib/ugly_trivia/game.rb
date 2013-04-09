@@ -86,12 +86,12 @@ module UglyTrivia
 
           winner = did_player_win()
           @current_player += 1
-          @current_player = 0 if @current_player == @players.length
+          @current_player %= @players.length
 
           winner
         else
           @current_player += 1
-          @current_player = 0 if @current_player == @players.length
+          @current_player %= @players.length
           true
         end
 
@@ -105,7 +105,7 @@ module UglyTrivia
 
         winner = did_player_win
         @current_player += 1
-        @current_player = 0 if @current_player == @players.length
+        @current_player %= @players.length
 
         return winner
       end
@@ -117,8 +117,8 @@ module UglyTrivia
   		@in_penalty_box[@current_player] = true
 
       @current_player += 1
-      @current_player = 0 if @current_player == @players.length
-  		return true
+      @current_player %= @players.length
+          return true
     end
 
   private
