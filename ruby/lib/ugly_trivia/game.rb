@@ -59,7 +59,7 @@ module UglyTrivia
 
     def advance_player_by roll
       @places[@current_player] += roll
-      @places[@current_player] -= 12 if @places[@current_player] > 11
+      @places[@current_player] %= 12
       puts "#{@players[@current_player]}'s new location is #{@places[@current_player]}"
       puts "The category is #{current_category}"
     end
